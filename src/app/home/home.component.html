@@ -1,0 +1,116 @@
+
+<div id="page" *ngIf="loading==false">
+   <app-navbar></app-navbar>
+
+   <div id="demo" class="carousel slide" data-ride="carousel" *ngIf="slider_data"> 
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+   <ng-container *ngFor="let row of slider_data;let i=index">
+
+      <div class="carousel-item active" [class.active]="i==0">
+        <img [src]="row.slider_img" alt="Los Angeles" style="min-width: 100%;height: 500px;">
+        <div class="carousel-caption">
+            <h1 class="bg-white">{{row.slider_head}}</h1>
+            <!-- <p>We had such a great time in LA!</p> -->
+          </div>
+      </div>
+    </ng-container>  
+    </div>
+  
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  
+  </div>
+    
+    <div class="colorlib-intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2 class="intro">It started with a simple idea: Create quality, well-designed products that I wanted myself.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="colorlib-product">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 text-center" *ngFor="let row of category_data">
+                    <div class="featured">
+                        <a [routerLink]="'/products/'+row.cat_id" class="featured-img" style="background-image: url({{row.cat_img}});"></a>
+                        <div class="desc">
+                            <h2><a href="#">{{row.cat_name}}</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="colorlib-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
+                    <h2>Best Sellers</h2>
+                </div>
+            </div>
+            <div class="row row-pb-md">
+                <div class="col-lg-3 mb-4 text-center" *ngFor="let row of best_seller">
+                    <div class="product-entry border">
+                        <a [routerLink]="'/product_det/'+row.product_tbl_id" class="prod-img">
+                            <img [src]='row.product_img' class="img-fluid" [alt]='row.product_name'>
+                        </a>
+                        <div class="desc">
+                            <h2><a [routerLink]="'/product_det/'+row.product_tbl_id" >{{row.product_name}}</a></h2>
+                            <span class="price"> &#8377; {{row.price}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p><a href="#" class="btn btn-primary btn-lg">Shop All Products</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="colorlib-partner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
+                    <h2>Trusted Partners</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col partner-col text-center">
+                    <img src="assets/images/brand-1.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+                </div>
+                <div class="col partner-col text-center">
+                    <img src=" assets/images/brand-2.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+                </div>
+                <div class="col partner-col text-center">
+                    <img src="assets/images/brand-3.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+                </div>
+                <div class="col partner-col text-center">
+                    <img src="assets/images/brand-4.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+                </div>
+                <div class="col partner-col text-center">
+                    <img src="assets/images/brand-5.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <app-footer></app-footer>
+</div>
+
+
+<div class="loading" *ngIf="loading==true">
+    <p class="font-weight-bold" style="font-size: 20px;">Loading...</p>
+</div>

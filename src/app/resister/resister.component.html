@@ -1,0 +1,29 @@
+
+
+<app-navbar></app-navbar>
+<form [formGroup]="userForm" (ngSubmit)="resisteruser()" >
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-5">
+            <div class="p-5 shadow">
+                 <h1 class="text-center">Resister Now</h1>
+                 <label>User Name</label>
+                 <input type="text" formControlName="user_name" class="form-control mb-3">
+
+                 <label>User Name</label>
+                 <input type="text" formControlName="user_mobile" class="form-control mb-3">
+
+                 <label>User Name</label>
+                 <input type="text" formControlName="user_email" class="form-control mb-3">
+
+                 <label>User Name</label>
+                 <input type="text" formControlName="user_password" class="form-control mb-3">
+ 
+                 <div class="text-center"><button class="btn btn-primary ">Resister Now</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<app-footer></app-footer>

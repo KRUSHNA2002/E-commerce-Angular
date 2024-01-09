@@ -1,0 +1,40 @@
+<div *ngIf="loading==false">
+    <app-navbar></app-navbar>
+
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center">User Cart</h1>
+        <table class="table table-bordered ">
+            <tr class="text-center">
+                <th>SN</th>
+                <th>Product</th>
+                <th>Rate</th>
+                <th>Qty</th>
+                <th>Total</th>
+                <th> Delete</th>
+            </tr>
+            <tr *ngFor="let row of cart_data;let i=index" class="text-center">
+                <td>{{i+1}}</td>
+                <td>{{row.product_name}}</td>
+                <td> &#8377; {{row.price}}</td>
+                <td>
+                    <button class="btn btn-sm p-1 shadow" (click)="incqty(row.product_econ_cart_id)">+</button>
+                    {{row.qty}}
+                    <button class="btn btn-sm p-1 shadow" (click)="decqty(row.product_econ_cart_id)">-</button>
+                </td>
+                <td class="font-weight-bold"> &#8377; {{row.price*row.qty}}</td>
+                <td><button class="btn bg-danger " (click)="removeproduct(row.product_econ_cart_id)"><i
+                            class="icon icon-trash"></i></button></td>
+            </tr>
+        </table>
+        <br>
+        <div class="text-right p-3">
+            <button class="btn btn-primary" routerLink="/confirm_order">Confirm order</button>
+        </div>
+        <br>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+<div class="loading" *ngIf="loading==true">
+    <p class="font-weight-bold" style="font-size: 20px;">Loading...</p>
+</div>

@@ -1,0 +1,63 @@
+
+<app-navbar></app-navbar>
+
+<br>
+<br>
+<br>
+<form [formGroup]="addressForm" (ngSubmit)="placeorder ()" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Confirm Order to Placed Order</h1>
+            <br>
+        </div>
+        <div class="col-md-6">
+            Enter Your Area
+            <input type="text" class="form-control" formControlName="area">
+        </div>
+
+        <div class="col-md-6">
+            Enter Your City
+            <input type="text" class="form-control" formControlName="city">
+        </div>
+
+        <div class="col-md-6">
+            Enter Your District
+            <input type="text" class="form-control" formControlName="district">
+        </div>
+
+        <div class="col-md-6">
+            Enter Your Country
+            <input type="text" class="form-control" formControlName="country">
+        </div>
+
+        <div class="col-md-6">
+            Enter Your State
+            <input type="text" class="form-control" formControlName="state">
+        </div>
+
+        <div class="col-md-6">
+            Enter Your Pincode
+            <input type="text" class="form-control" formControlName="pincode">
+        </div>
+
+        <div class="col-md-6">
+            Enter Payment Method
+           <select formControlName="payment_type" class="form-control">
+            <option value="cod">Cod</option>
+            <option value="online">Online</option>
+           </select>
+        </div>
+        
+        <div class=" col-md-12  text-right mt-3">
+            <button routerLink="/" class="btn  btn-primary">back to home </button>
+            <button class="btn btn-primary">Place Order</button>
+        </div>
+    </div>
+    
+</div>
+</form>
+<br>
+<br>
+
+<app-footer></app-footer>

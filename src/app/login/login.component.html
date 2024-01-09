@@ -1,0 +1,25 @@
+
+
+<app-navbar></app-navbar>
+<form [formGroup]="loginForm" (ngSubmit)="loginuser()" >
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-5">
+            <div class="p-5 shadow">
+                 <h1 class="text-center">Login Now</h1>
+
+                 <label>User mobile</label>
+                 <input type="text" formControlName="user_mobile" class="form-control mb-3">
+
+                 <label>User Name</label>
+                 <input type="text" formControlName="user_password" class="form-control mb-3">
+ 
+                 <div class="text-center"><button class="btn btn-primary ">Login Now</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<app-footer></app-footer>
+
